@@ -40,6 +40,7 @@ const updatePublisher = async (req, res) => {
         }
         res.json(updatePublisher);
     } catch (error) {
+        console.error(error)
         res.status(500).json({ message: "Erro ao atualizar Editora!" });
     }
 };
