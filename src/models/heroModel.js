@@ -19,10 +19,10 @@ const getHeroById = async (id) => {
     return result.rows[0];
 };
 
-const createHero = async (name, house_id) => {
+const createHero = async (name, publisher_id) => {
     const result = await pool.query(
-        "INSERT INTO heroes (name, house_id) VALUES ($1, $2) RETURNING *",
-        [name, house_id]
+        "INSERT INTO heroes (name, publisher_id) VALUES ($1, $2) RETURNING *",
+        [name, publisher_id]
     );
     return result.rows[0];
 };

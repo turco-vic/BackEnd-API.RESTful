@@ -27,6 +27,7 @@ const createHero = async (req, res) => {
         const newHero = await heroModel.createHero(name, publisher_id);
         res.status(201).json(newHero);
     } catch (error) {
+        console.error(error)
         res.status(500).json({ message: "Erro ao criar Herói!" });
     }
 };
