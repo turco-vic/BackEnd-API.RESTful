@@ -1,6 +1,6 @@
 const heroModel = require("../models/heroModel");
 
-const getAllheros = async (req, res) => {
+const getAllHeroes = async (req, res) => {
     try {
         const heroes = await heroModel.getHeroes();
         res.json(heroes);
@@ -54,4 +54,4 @@ const deleteHero = async (req, res) => {
     }
 };
 
-module.exports = { getAllheros, getHero, createHero, updateHero, deleteHero };
+module.exports = { getAllHeroes, getHero, createHero, updateHero, deleteHero };
