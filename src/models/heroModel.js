@@ -1,12 +1,23 @@
 const pool = require("../config/database");
 
-const getHeroes = async () => {
-    const result = await pool.query(
-        `SELECT heroes.*, publishers.name AS publisher_name 
-         FROM heroes 
-         LEFT JOIN publishers ON heroes.publisher_id = publishers.id`
-    );
-    return result.rows;
+const getHeroes = async (name) => {
+    if (!name) {
+        const result = await pool.query(`
+            SELECT heroes.id, heroes.name AS hero_name, publishers.name AS publisher_name
+                FROM heroes
+            LEFT JOIN publishers ON heroes.publisher_id = publishers.id`
+        );
+        return result.rows;
+    }
+    else {
+        const result = await pool.query(`            
+            SELECT heroes.id, heroes.name AS hero_name, publishers.name AS publisher_name
+                FROM heroes
+            LEFT JOIN publishers ON heroes.publisher_id = publishers.id
+            WHERE heroes.name ILIKE $1`,
+            [`%${name}%`]);
+        return result.rows;
+    }
 };
 
 const getHeroById = async (id) => {

@@ -4,16 +4,31 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "start": "node server.js",
-  "dev": "nodemon server.js"
-},
-  "keywords": ["API", "RESTful", "Express", "PostgreSQL", "Node.js", "JavaScript", "Backend", "Development", "SENAI", "RESTful API", "CRUD", "Database", "Web Development"],
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "API",
+    "RESTful",
+    "Express",
+    "PostgreSQL",
+    "Node.js",
+    "JavaScript",
+    "Backend",
+    "Development",
+    "SENAI",
+    "RESTful API",
+    "CRUD",
+    "Database",
+    "Web Development"
+  ],
   "author": "Enzo",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
+    "pdfkit": "^0.17.0",
     "pg": "^8.15.6"
   },
   "devDependencies": {
